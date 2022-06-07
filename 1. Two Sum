@@ -1,0 +1,33 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        //hashmap method
+        HashMap<Integer,Integer> list = new HashMap();
+              
+        for(int i=0;i<nums.length;i++){
+            int complement = target-nums[i];
+            if(list.containsKey(complement)){
+                return new int[] {list.get(complement),i};
+            }
+            else
+                list.put(nums[i],i);
+            
+        }
+        return new int[] {};
+        
+        
+        //brute force method
+        /*int[] r = new int[2];
+        int a = nums.length;
+        for(int i=0;i<a;i++){
+            for(int j=i+1;j<a;j++){
+                if(nums[i]+nums[j]==target){
+                    r[0] = i;
+                    r[1] = j;
+                }
+            }
+            
+        }
+        return r;*/
+    }
+}
